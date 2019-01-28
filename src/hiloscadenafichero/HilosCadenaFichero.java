@@ -23,6 +23,8 @@ public class HilosCadenaFichero {
         Objeto objeto = null;
         String cadena1, cadena2, cadena3, cadena4;
 
+        
+        //Creamos los buffers de lectura
         FileReader f1 = new FileReader("C:/Users/a16alfonsofa/Documents/NetBeansProjects/HilosCadenaFichero/FICHERO1.txt");
         BufferedReader read1 = new BufferedReader(f1);
 
@@ -35,6 +37,8 @@ public class HilosCadenaFichero {
         FileReader f4 = new FileReader("C:/Users/a16alfonsofa/Documents/NetBeansProjects/HilosCadenaFichero/FICHERO4.txt");
         BufferedReader read4 = new BufferedReader(f4);
 
+        
+        //Recorremos cada Fichero
         while ((cadena1 = read1.readLine()) != null) {
             // System.out.println(cadena1);
             largo = cadena1.length();
@@ -117,15 +121,16 @@ public class HilosCadenaFichero {
         read3.close();
         read4.close();
 
+        //Ordenamos la lista por la longitud de estas
         Collections.sort(lista, (Objeto p1, Objeto p2) -> new Integer(p1.getNumeroCaracteres()).compareTo(new Integer(p2.getNumeroCaracteres())));
 
+        
+        //Visualizamos la lista
         Objeto ob;
         Iterator iter = lista.iterator();
         while (iter.hasNext()) {
             ob = (Objeto) iter.next();
-            /* Cast del Objeto a la Clase Persona*/
-            System.out.println("La longitud es: " + ob.getNumeroCaracteres() + "\tLas iniciales son: " + ob.getIniciales());/* Accedo a los atributos de la clase 
-                                           por medio de sus Getters*/
+            System.out.println("La longitud es: " + ob.getNumeroCaracteres() + "\tLas iniciales son: " + ob.getIniciales());
         }
 
     }
