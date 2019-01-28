@@ -1,12 +1,12 @@
 package hiloscadenafichero;
 
+import static hiloscadenafichero.InicioHilos.hilosmain;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -23,7 +23,6 @@ public class HilosCadenaFichero {
         Objeto objeto = null;
         String cadena1, cadena2, cadena3, cadena4;
 
-        
         //Creamos los buffers de lectura
         FileReader f1 = new FileReader("C:/Users/a16alfonsofa/Documents/NetBeansProjects/HilosCadenaFichero/FICHERO1.txt");
         BufferedReader read1 = new BufferedReader(f1);
@@ -37,7 +36,15 @@ public class HilosCadenaFichero {
         FileReader f4 = new FileReader("C:/Users/a16alfonsofa/Documents/NetBeansProjects/HilosCadenaFichero/FICHERO4.txt");
         BufferedReader read4 = new BufferedReader(f4);
 
-        
+        //------------------
+        //Con Hilos
+        hilosmain(read1);
+        hilosmain(read2);
+        hilosmain(read3);
+        hilosmain(read4);
+        //------------------
+        //Sin Hilos
+
         //Recorremos cada Fichero
         while ((cadena1 = read1.readLine()) != null) {
             // System.out.println(cadena1);
@@ -124,7 +131,6 @@ public class HilosCadenaFichero {
         //Ordenamos la lista por la longitud de estas
         Collections.sort(lista, (Objeto p1, Objeto p2) -> new Integer(p1.getNumeroCaracteres()).compareTo(new Integer(p2.getNumeroCaracteres())));
 
-        
         //Visualizamos la lista
         Objeto ob;
         Iterator iter = lista.iterator();
