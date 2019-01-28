@@ -38,12 +38,18 @@ public class HilosCadenaFichero {
 
         //------------------
         //Con Hilos
+        System.out.println("1\n\n");
         hilosmain(read1);
+        System.out.println("2\n\n");
         hilosmain(read2);
+        System.out.println("3\n\n");
         hilosmain(read3);
+        System.out.println("4\n\n");
         hilosmain(read4);
+
         //------------------
         //Sin Hilos
+        System.out.println();
 
         //Recorremos cada Fichero
         while ((cadena1 = read1.readLine()) != null) {

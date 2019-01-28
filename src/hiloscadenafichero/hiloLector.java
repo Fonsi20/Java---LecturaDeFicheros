@@ -24,8 +24,8 @@ public class hiloLector extends Thread {
                     iniciais += d1.charAt(0);
                     lonxitude += d1.length();
                 }
-                iniciais = "";
-                lonxitude = 0;
+                //iniciais = "";
+                //lonxitude = 0;
                 gardado(br.readLine(), iniciais, lonxitude);
                 System.out.println(iniciais + "  " + lonxitude);
             }
